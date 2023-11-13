@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Noto+Sans:ital@0;1&display=swap');
+@import 'utils/utils-index';
+
+* {
+  box-sizing: border-box;
+  &:before, &:after {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  background: #9CCDF5 url('../images/background.jpg') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  width: 1920px;
+  height: 1080px;
+  padding: 2em;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.container {
+  &--grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+  }
+}
+.image__wrapper {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+  //grid-area: row-start / column-start / row-end / column-end;
+  grid-area: 1 / 4 / 13 / 9;
+}
+h1 {
+  font: 6.25rem/1.5 'Alfa Slab One', Serif;
+  margin: 0 0 0 5rem;
+  grid-area: 4 / 1 / 12 / 4;
+  text-align: left;
+  text-transform: capitalize;
+
+}
+.img-- {
+  &1 {
+    grid-area: 2 / 2 / 6 / 4;
+    img {
+      object-position: center;
+    }
+  }
+  &2 {
+    grid-area: 4 / 3 / 11 / 5;
+  }
+  &3 {
+    grid-area: 7 / 1 / 12 / 4;
+  }
+}
+.card {
+  * + * {
+    margin: 0;
+  }
+  display: grid;
+  grid-row: 12 / span 5;
+  grid-column: 4 / 9;
+  position: relative;
+  top: 3rem;
+  right: 5rem;
+  width: 100%;
+  &__group {
+    display: flex;
+    flex-direction: row;
+  }
+  &__image {
+    width: 56%;
+  }
+  &__controller {
+    .btn {
+      border: none;
+      background: #111;
+      color: #cfcfcf;
+      font-size: .8rem;
+      padding: 1em;
+      margin: 0;
+      &--prev {
+        background: #1502AB;
+      }
+      &--next {
+        background: #D40404;
+      }
+    }
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__info {
+    background: #F3DFE0;
+    color: #06003C;
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 0 4.5rem;
+    a.btn {
+      padding: 0.65em 1em;
+      font-size: .8em;
+      border: solid 2px #832525;
+      color: #832525;
+      &:hover {
+        background: #832525;
+        color: #fff;
+      }
+
+    }
+  }
+}
+
